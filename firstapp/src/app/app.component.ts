@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import {DataService} from './data.service' ;  
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,16 +12,19 @@ export class AppComponent {
   activated : boolean = false; 
   nombre : string = 'Hola '; 
   number : number = 20 ;
-  age : number ;
+  age : number  = 25;
   city : {
     name : number , 
     location : any 
 
   }
+  posts = [] ; 
   sports : string[];
-   constructor(){
-    this.age = 27;
-    
+   constructor(private dataService : DataService){
+    this.dataService.getData().subscribe(data =>{
+      console.log(data);
+this.posts = data; 
+    });
     this.city = {
       name : 20 , 
       location : 'hola' 
@@ -47,4 +51,5 @@ export class AppComponent {
     newSport.focus();
     return false; 
   }
+
 }

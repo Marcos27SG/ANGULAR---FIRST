@@ -1,2 +1,8 @@
 <!DOCTYPE html>
 <h1 class="color">{{ title }}</h1>
+
+<div *ngFor = "let post of posts">
+    <h4>{{post.title}}</h4>
+    <p>{{post.body}}</p>
+
+</div> 

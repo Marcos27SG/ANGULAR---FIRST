@@ -1,4 +1,6 @@
 import {Component} from '@angular/core' ;
+import { DataService } from '../data.service';
+import { Post } from '../Post';
 
 
 @Component({
@@ -8,5 +10,11 @@ import {Component} from '@angular/core' ;
 })
  export class HelloWorld{
     title  =  "Pagina 1" ;
+    posts : Post[] ; 
+    constructor(private dataService: DataService){
+        this.dataService.getData().subscribe( data=>{
+            this.posts = data ; 
+        });
 
+    }
  }
