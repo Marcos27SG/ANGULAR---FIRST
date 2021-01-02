@@ -6,7 +6,37 @@
 </ul>
 
 {{ users}}
-
+<div>
 <ul>
-  <li *ngFor = "let user of users">{{user}}</li>
+  
+    <app-user *ngFor =  "let user of users" [nameUser] = "user">
+      
+    </app-user>
+  
 </ul>
+</div>
+<div>
+  <p>age: {{age}}</p>
+  <p>city: {{city.name}}</p>
+  <p>location: {{city.location}}</p>
+  <div>
+<form (submit)="addUser(newSport)">
+  <input type="text" #newSport>
+  <button>Aniadir</button>
+</form>
+  </div>
+  <ul>
+    <li *ngFor  = 'let sport of sports'>
+      {{sport}}
+      <button (click) = 'deleteUser(sport)'>Eliminar</button>
+    </li>
+  </ul>
+</div>
+
+<div>
+  <button (click) = "sayHello()">Click aqui! </button>
+</div>
+
+<div>
+
+</div>

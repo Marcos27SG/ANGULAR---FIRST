@@ -7,6 +7,6 @@ import {Component} from '@angular/core' ;
     styleUrls: ['./first.component.css']
 })
  export class HelloWorld{
-    title  =  "Holas" ;
+    title  =  "Pagina 1" ;
 
  }
